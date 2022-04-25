@@ -30,3 +30,9 @@ user_type_repository.save(user_type_2)
 
 user_1 = User('Dozer', user_type_2)
 user_repository.save(user_1)
+
+user_2 = User('Neo', user_type_2)
+user_repository.save(user_2)
+
+booking_1 = Booking(user_2, class_2)
+booking_repository.save(booking_1)

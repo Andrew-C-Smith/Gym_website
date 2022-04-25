@@ -9,5 +9,7 @@ def save(user):
     values = [user.name, user.user_type.id]
     results = run_sql(sql, values)
     id = results[0]['id']
+    print(results[0])
     user.id = id
+    
 

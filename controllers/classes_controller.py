@@ -9,5 +9,5 @@ classes_blueprint = Blueprint("classes", __name__)
 # INDEX
 @classes_blueprint.route("/classes")
 def classes():
-    gym_classes = gym_class_repository.select_all()
-    return render_template("classes/class_index.html")
+    classes = gym_class_repository.select_all()
+    return render_template("classes/class_index.html", classes=classes)

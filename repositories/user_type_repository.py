@@ -7,3 +7,11 @@ def save(user_type):
     results = run_sql(sql, values)
     id = results[0]['id']
     user_type.id = id
+
+
+def select(id):
+    sql = "SELECT * FROM user_types WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    user_type = UserType(result["name"], result["id"])
+    return user_type

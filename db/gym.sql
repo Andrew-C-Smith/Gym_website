@@ -48,7 +48,7 @@ INSERT INTO classes (name, date, time) VALUES ('Body Pump', '2 May 2022', '18:00
 -- INSERT INTO user_types (name) VALUES ('admin');
 
 
-INSERT INTO users (name) VALUES ('Neo');
+-- INSERT INTO users (name) VALUES ('Neo');
 INSERT INTO users (name) VALUES ('Morpheus');
 INSERT INTO users (name) VALUES ('Trinity');
 INSERT INTO users (name) VALUES ('Tank');

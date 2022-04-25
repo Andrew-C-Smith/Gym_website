@@ -7,3 +7,25 @@ def save(gym_class):
     results = run_sql(sql, values)
     id = results[0]['id']
     gym_class.id = id
+
+
+def select_all():
+    classes = []
+    sql = "SELECT * FROM classes"
+    results = run_sql(sql)
+    for result in results:
+        gym_class = GymClass(result["name"], result["date"], result["time"], result["id"])
+        classes.append(gym_class)
+    return classes
+
+
+def delete(id):
+    sql = "DELETE FROM classes WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+
+def update(gym_class):
+    sql = "UPDATE classes SET name = %s WHERE id = %s"
+    values = [gym_class.name, gym_class.date, gym_class.time]
+    run_sql(sql, values)
