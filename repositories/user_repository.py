@@ -6,7 +6,7 @@ import repositories.user_type_repository as user_type_repository
 
 def save(user):
     sql = "INSERT INTO users (name, user_type_id) VALUES (%s, %s) RETURNING id"
-    values = [user.name, user.zombie_type.id]
+    values = [user.name, user.user_type.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     user.id = id

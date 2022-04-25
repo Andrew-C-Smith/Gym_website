@@ -1,0 +1,84 @@
+body {
+    background: #1b1b20;
+    font-family: "Poppins";
+    margin-left: 20%;
+    margin-right: 20%;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+
+  }
+
+h3 {
+    color: red
+}
+
+  
+  .container {
+    margin: 0 4em;
+    display: flex;
+    gap: 1em;
+  }
+  
+  .card {
+    background: white;
+    margin-bottom: 2em;
+    padding: 4em;
+  }
+  
+  a {
+    color: #0063e4;
+    font-size: 1.3rem;
+    text-decoration: none;
+    margin-top: 1em;
+    /* display: inline-block; */
+    font-weight: bold;
+    padding: 0.5em;
+    margin-left: -0.5em;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  a:before, a:after {
+    position: absolute;
+    content: "";
+    border-bottom: 3px solid #0063e4;
+    border-radius: 1em;
+    bottom: 0.3em;
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  a:before {
+    width: 1em;
+    transform-origin: left;
+  }
+  a:after {
+    width: 82%;
+    left: 1em;
+    transform: translateX(110%);
+  }
+  a:hover:before {
+    transform: scaleX(0.3);
+  }
+  a:hover:after {
+    transform: translateX(0);}
+
+
+ h1 {
+     color: white;
+     text-align: center;
+
+}
+
+.links {
+    text-align: center;
+    
+}
+
+form {
+    color: white;
+    text-align: center;
+
+}
+
+input {
+    text-align: center;
+}
