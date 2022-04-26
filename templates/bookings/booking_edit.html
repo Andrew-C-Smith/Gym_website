@@ -1,21 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Update a Class</h2>
+<h2>Update a Booking</h2>
 
-<form action="/classes/{{ classes.id }}" method="POST">
+<form action="/bookings/{{ booking.id }}" method="POST">
     <div>
-        <label for="class">Class:</label>
-        <select name="gym_class_id" id="class">
+        <label for="gym_class">Gym Class:</label>
+        <select name="gym_class_id" id="gym_class">
             {% for class in classes %}
-            <option value="{{ classes.id }}" {% if gym_class.id == booking.gym_class.id %} selected {% endif %}>
-                {{ gym_class.name }}
+            <option value="{{ classes.id }}" {% if class.id == booking.class.id %} selected {% endif %}>
+                {{ class.name }}
             </option>
             {% endfor %}
         </select>
     </div>
     <div>
-        <label for="user">User:</label>
+        <label for="user">Member:</label>
         <select name="user_id" id="user">
             {% for user in users %}
             <option value="{{ user.id }}" {% if user.id == booking.user.id %} selected {% endif %}>

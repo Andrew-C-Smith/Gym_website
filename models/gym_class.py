@@ -4,3 +4,5 @@ class GymClass:
         self.date = date
         self.time = time
         self.id = id
+
+    

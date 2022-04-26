@@ -14,16 +14,27 @@ def save(booking):
     return booking
 
 
-# def select(id):
-#     sql = "SELECT * FROM bookings WHERE id = %s"
-#     values = [id]
-#     result = run_sql(sql, values)[0]
-#     gym_class = gym_class_repository.select(result["gym_class_id"])
-#     user = user_repository.select(result["user_id"])
-#     booking = Booking(gym_class, user, result["id"])
-#     return booking
+def select(id):
+    sql = "SELECT * FROM bookings WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    gym_class = gym_class_repository.select(result["gym_class_id"])
+    user = user_repository.select(result["user_id"])
+    booking = Booking(gym_class, user, result["id"])
+    return booking
 
-# def delete(id):
-#     sql = "DELETE FROM bookings WHERE id = %s"
-#     values = [id]
-#     run_sql(sql, values)
+def delete(id):
+    sql = "DELETE FROM bookings WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+def select_all():
+    bookings = []
+    sql = "SELECT * FROM bookings"
+    results = run_sql(sql)
+    for result in results:
+        gym_class = gym_class_repository.select(result["classes_id"])
+        user = user_repository.select(result["user_id"])
+        biting = Booking(gym_class, user, result["id"])
+        bookings.append(biting)
+    return bookings

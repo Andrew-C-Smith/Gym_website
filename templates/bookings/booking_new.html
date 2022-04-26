@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add a New Booking</h2>
+
+<form action="/bookings" method="POST">
+    <div>
+        <label for="gym_class">gym class:</label>
+        <select name="gym-class_id" id="gym_class">
+            {% for class in classes %}
+            <option value="{{ classes.id }}">
+                {{ class.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="user">Member:</label>
+        <select name="user_id" id="user">
+            {% for user in users %}
+            <option value="{{ user.id }}">
+                {{ user.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

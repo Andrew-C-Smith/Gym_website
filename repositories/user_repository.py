@@ -22,5 +22,13 @@ def select_all():
         user = User(result["name"], result["id"])
         users.append(user)
     return users
+
+def select(id):
+    sql = "SELECT * FROM users WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    user_type = user_type_repository.select(result["user_type_id"])
+    user = User(result["name"], user_type, result["id"])
+    return user
     
 
