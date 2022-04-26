@@ -17,7 +17,7 @@ def bookings():
 
 
 # NEW
-@bookings_blueprint.route("/bitings/new")
+@bookings_blueprint.route("/bookings/new")
 def new_booking():
     gym_classes = gym_class_repository.select_all()
     users = user_repository.select_all()

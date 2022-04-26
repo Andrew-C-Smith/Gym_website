@@ -18,8 +18,8 @@ def select_all():
     sql = "SELECT * FROM users"
     results = run_sql(sql)
     for result in results:
-        
-        user = User(result["name"], result["id"])
+        user_type = user_type_repository.select(result["user_type_id"])
+        user = User(result["name"],user_type, result["id"])
         users.append(user)
     return users
 
@@ -32,3 +32,13 @@ def select(id):
     return user
     
 
+def delete(id):
+    sql = "DELETE FROM users WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+
+def update(user):
+    sql = "UPDATE users SET (name, user_type_id) = (%s, %s) WHERE id = %s"
+    values = [user.name, user.user_type.id, user.id]
+    run_sql(sql, values)

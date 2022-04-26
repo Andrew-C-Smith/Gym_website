@@ -20,7 +20,7 @@ def select(id):
     result = run_sql(sql, values)[0]
     gym_class = gym_class_repository.select(result["gym_class_id"])
     user = user_repository.select(result["user_id"])
-    booking = Booking(gym_class, user, result["id"])
+    booking = Booking(user, gym_class, result["id"])
     return booking
 
 def delete(id):
@@ -35,6 +35,6 @@ def select_all():
     for result in results:
         gym_class = gym_class_repository.select(result["classes_id"])
         user = user_repository.select(result["user_id"])
-        biting = Booking(gym_class, user, result["id"])
-        bookings.append(biting)
+        booking = Booking(user, gym_class, result["id"])
+        bookings.append(booking)
     return bookings

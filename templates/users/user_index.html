@@ -3,15 +3,15 @@
 
 <h2>Members</h2>
 <a href="/users/user_new">Add Member</a>
-<a href="/users/user_edit">Edit Member</a>
+
 
 {% for user in users %}
 
 <section class="form">
-    <p> <b>{{ user.name }} </b>  {{user.user_type.id}} </p>
-    <a href="/user/{{ user.id }}/edit"></a>
-    <form action="/user/{{ user.id }}/delete" method="POST">
-        <input type="submit" value="Take the blue pill. Remove Member!">
+    <p> <b>{{ user.name }} </b>  </p>
+    <a href="/users/{{ user.id }}/edit">Edit</a>
+    <form action="/users/{{ user.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
     </form>
 </section>
 

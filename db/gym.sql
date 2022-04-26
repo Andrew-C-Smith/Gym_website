@@ -44,8 +44,8 @@ INSERT INTO classes (name, date, time) VALUES ('Body Pump', '2 May 2022', '18:00
 
 
 
-INSERT INTO user_types (name) VALUES ('member');
-INSERT INTO user_types (name) VALUES ('admin');
+-- INSERT INTO user_types (name) VALUES ('member');
+-- INSERT INTO user_types (name) VALUES ('admin');
 
 
 -- INSERT INTO users (name) VALUES ('Neo');
@@ -59,5 +59,5 @@ INSERT INTO user_types (name) VALUES ('admin');
 -- INSERT INTO users (name) VALUES ('Agent Jones');
 
 
-INSERT INTO bookings (user_id, classes_id) VALUES (1, 1);
+-- INSERT INTO bookings (user_id, classes_id) VALUES (1, 1);
 
