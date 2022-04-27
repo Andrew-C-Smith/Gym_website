@@ -9,11 +9,12 @@
 
 <section class="form">
     <p> <b>{{ class.name }} </b>  {{class.date}} at {{class.time}}</p>
+    <a href="/classes/{{ class.id }}">Details</a> /
     <a href="/classes/{{ class.id }}/edit">Edit</a>
     <form action="/classes/{{ class.id }}/delete" method="POST">
         <input type="submit" value="Remove Class!">
     </form>
-    <a href="/classes/{{ class.id }}">Details</a>
+
 </section>
 
 {% endfor %}
