@@ -2,7 +2,7 @@ from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.gym_class import GymClass
 import repositories.gym_class_repository as gym_class_repository
-import repositories.user_type_repository as user_type_repository
+import repositories.user_repository as user_repository
 
 classes_blueprint = Blueprint("classes", __name__)
 
@@ -53,3 +53,10 @@ def update_class(id):
 def delete(id):
     gym_class_repository.delete(id)
     return redirect("/classes")
+
+# SHOW
+@classes_blueprint.route("/classes/<id>")
+def show_class(id):
+    users = gym_class_repository.select_members_booked_on_class(id)
+    classes = gym_class_repository.select(id)
+    return render_template("classes/class_show.html", users=users, classes=classes)
