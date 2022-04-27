@@ -21,7 +21,7 @@ def bookings():
 def new_booking():
     gym_classes = gym_class_repository.select_all()
     users = user_repository.select_all()
-    return render_template("bookings/booking_new.html", gym_class=gym_classes, user=users)
+    return render_template("bookings/bookings_new.html", gym_class=gym_classes, user=users)
 
 
 # CREATE

@@ -3,12 +3,12 @@
 
 <h2>Bookings</h2>
 <a href="/bookings/booking_new">Add Booking</a>
-<a href="/bookings/booking_edit">Edit Booking</a>
+
 
 {% for booking in bookings %}
 
 <section>
-    <p>{{ booking.user.name }} bit {{ booking.classes.name }}</p>
+    <p>{{ booking.user.name }} booked {{ booking.classes.name }}</p>
     <a href="/bookings/{{ booking.id }}/edit">Edit</a>
     <form action="/bookings/{{ booking.id }}/delete" method="POST">
         <input type="submit" value="Delete">

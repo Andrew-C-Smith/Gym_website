@@ -33,14 +33,17 @@ def create_class():
 @classes_blueprint.route("/classes/<id>/edit")
 def edit_class(id):
     classes = gym_class_repository.select(id)
-    return render_template('classes/edit.html', classes=classes)
+    return render_template('classes/class_edit.html', classes=classes)
+    
 
 
 # UPDATE
 @classes_blueprint.route("/classes/<id>", methods=["POST"])
 def update_class(id):
     name = request.form["name"]
-    gym_class = GymClass(name, id)
+    date = request.form["date"]
+    time = request.form["time"]
+    gym_class = GymClass(name, date, time, id)
     gym_class_repository.update(gym_class)
     return redirect("/classes")
 

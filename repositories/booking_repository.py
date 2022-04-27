@@ -21,7 +21,7 @@ def select(id):
     gym_class = gym_class_repository.select(result["gym_class_id"])
     user = user_repository.select(result["user_id"])
     booking = Booking(user, gym_class, result["id"])
-    return booking
+    print (booking)
 
 def delete(id):
     sql = "DELETE FROM bookings WHERE id = %s"

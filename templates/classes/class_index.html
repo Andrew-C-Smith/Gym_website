@@ -3,14 +3,14 @@
 
 <h2>Classes</h2>
 <a href="/classes/class_new">Add Class</a>
-<a href="/classes/edit_class">Edit class</a>
+<!-- <a href="/classes/edit_class">Edit class</a> -->
 <a href="/user/book_class">Book on a class</a>
 {% for class in classes %}
 
 <section class="form">
     <p> <b>{{ class.name }} </b>  {{class.date}} at {{class.time}}</p>
-    <a href="/class/{{ class.id }}/edit"></a>
-    <form action="/class/{{ class.id }}/delete" method="POST">
+    <a href="/classes/{{ class.id }}/edit">Edit</a>
+    <form action="/classes/{{ class.id }}/delete" method="POST">
         <input type="submit" value="Remove Class!">
     </form>
 </section>

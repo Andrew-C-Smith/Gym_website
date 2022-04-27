@@ -4,29 +4,29 @@
 <h2>Update a Class</h2>
 
 <form action="/classes/{{ classes.id }}" method="POST">
-    <div>
-        <label for="class">Class:</label>
-        <select name="gym_class_id" id="class">
-            {% for class in classes %}
-            <option value="{{ classes.id }}" {% if gym_class.id == booking.gym_class.id %} selected {% endif %}>
-                {{ gym_class.name }}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
-    <div>
-        <label for="user">User:</label>
-        <select name="user_id" id="user">
-            {% for user in users %}
-            <option value="{{ user.id }}" {% if user.id == booking.user.id %} selected {% endif %}>
-                {{ user.name }}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
-    <div>
-        <input type="submit">
-    </div>
+
+    <form action="/classes/{{ classes.id }}" method="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ classes.name }}">
+         
+        </div>
+        <div>
+            <label for="Date">Date:</label>
+            <input type="text" id="date" name="date" value="{{ classes.date }}">
+          
+        </div>
+        <div>
+            <label for="Time">Time:</label>
+            <input type="text" id="time" name="time" value="{{ classes.time }}">
+            <input type="submit">
+        </div>
+    </form>
+
+
+
+
+
 </form>
 
 {% endblock %}

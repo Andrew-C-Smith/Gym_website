@@ -36,3 +36,4 @@ user_repository.save(user_2)
 
 booking_1 = Booking(user_2, class_2)
 booking_repository.save(booking_1)
+
