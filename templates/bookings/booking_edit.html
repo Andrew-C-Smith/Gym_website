@@ -8,7 +8,7 @@
         <label for="gym_class">Gym Class:</label>
         <select name="gym_class_id" id="gym_class">
             {% for class in classes %}
-            <option value="{{ classes.id }}" {% if class.id == booking.class.id %} selected {% endif %}>
+            <option value="{{ class.id }}" {% if class.id == booking.class.id %} selected {% endif %}>
                 {{ class.name }}
             </option>
             {% endfor %}

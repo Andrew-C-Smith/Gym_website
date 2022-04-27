@@ -6,10 +6,10 @@
 <form action="/bookings" method="POST">
     <div>
         <label for="gym_class">gym class:</label>
-        <select name="gym-class_id" id="gym_class">
-            {% for class in classes %}
-            <option value="{{ classes.id }}">
-                {{ class.name }}
+        <select name="gym_class_id" id="gym_class_id">
+            {% for gym_class in gym_classes %}
+            <option value="{{ gym_class.id }}">
+                {{ gym_class.name }}
             </option>
             {% endfor %}
         </select>

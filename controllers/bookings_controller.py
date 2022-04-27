@@ -13,7 +13,7 @@ bookings_blueprint = Blueprint("bookings", __name__)
 @bookings_blueprint.route("/bookings")
 def bookings():
     bookings = booking_repository.select_all()
-    return render_template("bookings/booking_index.html", booking=bookings)
+    return render_template("bookings/booking_index.html", bookings=bookings)
 
 
 # NEW
@@ -21,7 +21,7 @@ def bookings():
 def new_booking():
     gym_classes = gym_class_repository.select_all()
     users = user_repository.select_all()
-    return render_template("bookings/bookings_new.html", gym_class=gym_classes, user=users)
+    return render_template("bookings/booking_new.html", gym_classes=gym_classes, users=users)
 
 
 # CREATE
